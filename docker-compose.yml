@@ -1,0 +1,11 @@
+version: "2"
+services:
+  php:
+    build: .
+    volumes:
+        - ./public/:/var/www/html
+        - /var/log/apache2/
+    ports:
+        - "3001:80"
+    environment:
+        - VIRTUAL_HOST="aaa.com"
